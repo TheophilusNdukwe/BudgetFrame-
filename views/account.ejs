@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>BudgetFrame</title>
+  </head>
+  <body>
+    <header>
+      <!-- BudgetFrame header with logout on opposite side -->
+      <h1><i class="fa fa-money"></i> BudgetFrame</h1>
+      <a href="/logout" class="btn btn-default"
+        ><i class="fa fa-sign-out"></i> Logout</a
+      >
+    </header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-2 side-bar">
+          <ul class="nav nav-pills nav-stacked">
+            <li class="btn">
+              <a href="/dashboard"><i class="fa fa-dashboard"></i> Dashboard</a>
+            </li>
+            <li class="btn">
+              <a href="/profile"><i class="fa fa-user"></i> Profile</a>
+            </li>
+            <li class="btn active">
+              <a href="/account"><i class="fa fa-cog"></i> Account Info</a>
+            </li>
+          </ul>
+        </div>
+        <div class="well">
+          <h3><span class="fa fa-lock"></span> Account Information</h3>
+
+          <% if (user.local.email) { %>
+          <p>
+            <strong>Email:</strong> <%= user.local.email %><br />
+            <strong>password</strong>: <%= user.local.password %>
+          </p>
+          <% } else { %>
+          <a href="/connect/local" class="btn">Connect Local Account</a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

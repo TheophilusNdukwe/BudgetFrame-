@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>BudgetFrame</title>
+      <link
+        rel="stylesheet"
+        href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
+      <link
+        rel="stylesheet"
+        href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+      <link rel="stylesheet" href="dashboard.css" />
+    </head>
+    <body>
+      <header>
+        <!-- BudgetFrame header with logout on opposite side -->
+        <h1><i class="fa fa-money"></i> BudgetFrame</h1>
+        <a href="/logout" class="btn btn-default"
+          ><i class="fa fa-sign-out"></i> Logout</a
+        >
+      </header>
+
+      <div class="container-fluid">
+        <div class="row">
+          <!-- SIDEBAR -->
+          <div class="col-sm-2 side-bar">
+            <ul class="nav nav-pills nav-stacked">
+              <li class="btn active">
+                <a href="/dashboard"
+                  ><i class="fa fa-dashboard"></i> Dashboard</a
+                >
+              </li>
+              <li class="btn">
+                <a href="/profile"><i class="fa fa-user"></i> Profile</a>
+              </li>
+              
+            </ul>
+          </div>
+          <!-- Dashboard -->
+          <div class="col-sm-10">
+            <div class="row">
+              <!-- Income Section -->
+              <div class="col-sm-4">
+                <h2>Income</h2>
+                <form id="income-form">
+                  <div class="form-group">
+                    <label for="income-source">Source:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="income-source"
+                      required />
+                  </div>
+                  <div class="form-group">
+                    <label for="income-amount">Amount:</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="income-amount"
+                      required />
+                  </div>
+                  <div class="form-group">
+                    <label for="income-date">Date:</label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="income-date"
+                      required />
+                  </div>
+                  <button type="submit" class="btn btn-primary">
+                    Add Income
+                  </button>
+                </form>
+                <h3>
+                  Total Income: <span id="total-income">0.00</span>
+                </h3>
+                <ul id="income-list"></ul>
+              </div>
+
+              <!-- Expenses Section -->
+              <div class="col-sm-4">
+                <h2>Expenses</h2>
+                <form id="expense-form">
+                  <div class="form-group">
+                    <label for="expense-description">Description:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="expense-description"
+                      required />
+                  </div>
+                  <div class="form-group">
+                    <label for="expense-amount">Amount:</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="expense-amount"
+                      required />
+                  </div>
+                  <div class="form-group">
+                    <label for="expense-category">Category:</label>
+                    <select
+                      class="form-control"
+                      id="expense-category"
+                      required>
+                      <option value="housing">Housing</option>
+                      <option value="food">Food</option>
+                      <option value="transportation">Transportation</option>
+                      <option value="utilities">Utilities</option>
+                      <option value="entertainment">Entertainment</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="expense-date">Date:</label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="expense-date"
+                      required />
+                  </div>
+                  <button type="submit" class="btn btn-primary">
+                    Add Expense
+                  </button>
+                </form>
+                <h3>
+                  Total Expenses: <span id="total-expenses">0.00</span>
+                </h3>
+                <ul id="expense-list"></ul>
+              </div>
+
+              <!-- Net Balance and Visualizations -->
+              <div class="col-sm-4">
+                <h2>Net Balance</h2>
+                <h3 id="net-balance">0.00</h3>
+                <!-- Add additional feature when you have more time -->
+                <!-- Pie Chart (add a canvas to hold it) -->
+                 <label for="expense-pie-chart">Pie Chart</label>
+              <canvas id="expense-pie-chart"></canvas>
+              <!-- Bar Chart (add a canvas to hold it) -->
+               <label for="income-expense-bar-chart">Bar Chart</label>
+              <canvas id="income-expense-bar-chart"></canvas>
+                <div id="advice-container">
+                  <h4 id="financial-advice-title">Financial Advice</h4>
+                  <p id="financial-advice">
+                    Your financial situation is balanced.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+     <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </body>
+</html>

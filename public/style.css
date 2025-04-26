@@ -1,0 +1,247 @@
+img {
+  height: 200px;
+}
+/* Blue Glassmorphic Design */
+:root {
+  --primary-blue: #2980b9;
+  --secondary-blue: #3498db;
+  --light-blue: #ebf5fb;
+  --dark-blue: #1c638e;
+}
+
+body {
+  background-image: linear-gradient(to right bottom, #1e3c72, #2a5298);
+  background-attachment: fixed;
+  color: #f0f0f0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Glassmorphic Elements */
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+}
+
+header {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 15px 0 rgba(31, 38, 135, 0.15);
+  padding: 15px 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-bottom: ; */
+}
+
+header h1 {
+  margin: 0;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 16px 0 rgba(31, 38, 135, 0.3);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-blue {
+  background-color: var(--secondary-blue);
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.btn-blue:hover {
+  background-color: var(--primary-blue);
+  box-shadow: 0 6px 16px rgba(52, 152, 219, 0.4);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.side-bar {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  padding: 15px 0;
+  height: calc(100vh - 70px);
+}
+
+.side-bar ul {
+  padding: 0;
+}
+
+.side-bar li.btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border-radius: 0;
+  color: white;
+  padding: 12px 20px;
+  margin: 0;
+  transition: all 0.3s ease;
+  border: none;
+  background: transparent;
+}
+
+.side-bar li.btn:hover,
+.side-bar li.btn.active {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: inset 4px 0 0 var(--secondary-blue);
+}
+
+.side-bar li.btn a {
+  color: white;
+  display: block;
+  text-decoration: none;
+}
+
+.side-bar li.btn a:hover {
+  text-decoration: none;
+}
+
+.profile-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  margin-top: 30px;
+  padding: 25px;
+  color: white;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.photo-upload-container {
+  margin-bottom: 20px;
+}
+
+.edit-form {
+  margin-top: 20px;
+}
+
+.edit-form label {
+  font-weight: bold;
+  color: white;
+  opacity: 0.9;
+  margin-bottom: 8px;
+}
+
+.edit-form .form-control {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
+  border-radius: 6px;
+}
+
+.edit-form .form-control:focus {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: var(--secondary-blue);
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
+  color: white;
+}
+
+.edit-form .input-group-btn button {
+  height: 34px;
+}
+
+h2,
+h3 {
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.text-blue {
+  color: var(--secondary-blue);
+}
+
+hr {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.well {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  color: white;
+  width: fit-content;
+  margin: auto;
+}
+
+/* Adjust the logout button in header */
+header .btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 6px 15px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+header .btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+/* Custom scrollbar for the page */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Make inputs and form elements consistent with glassmorphic design */
+input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
