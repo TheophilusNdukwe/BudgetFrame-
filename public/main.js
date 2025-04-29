@@ -254,13 +254,28 @@ function updateTotalIncome(totalIncome) {
 
 //Update income list
 function updateIncomeList() {
-  incomeList.innerHTML = "";
+  incomeData.forEach((entry, index) => { // Get the index
+        const listItem = document.createElement("li");
+        listItem.textContent = `Source: ${entry.source}, Amount: ${entry.amount}, Date: ${entry.date}`;
 
-  incomeData.forEach(entry => {
-    const listItem = document.createElement("li");
-    listItem.textContent = `Source: ${entry.source}, Amount: ${entry.amount}, Date: ${entry.date}`;
-    incomeList.appendChild(listItem);
-  });
+        // Create a delete button (trash icon)
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "🗑️"; // You can use an actual icon here
+        deleteButton.classList.add("delete-button");
+        
+        // Add event listener to delete button
+        deleteButton.addEventListener("click", () => {
+            deleteIncomeEntry(index);
+        });
+
+        listItem.appendChild(deleteButton);
+        incomeList.appendChild(listItem);
+    });
+}
+function deleteIncomeEntry(index) {
+    incomeData.splice(index, 1); // Remove the entry from the array
+    saveDataToLocalStorage();
+    updateUI();
 }
 
 // Update total expenses display
@@ -272,11 +287,30 @@ function updateTotalExpenses(totalExpenses) {
 function updateExpenseList() {
   expenseList.innerHTML = "";
 
-  expenseData.forEach(entry => {
-    const listItem = document.createElement("li");
-    listItem.textContent = `Description: ${entry.description}, Amount: ${entry.amount}, Category: ${entry.category}, Date: ${entry.date}`;
-    expenseList.appendChild(listItem);
-  });
+  expenseData.forEach((entry, index) => { // Get the index
+        const listItem = document.createElement("li");
+        listItem.textContent = `Description: ${entry.description}, Amount: ${entry.amount}, Category: ${entry.category}, Date: ${entry.date}`;
+
+        // Create a delete button (trash icon)
+        const deleteButton = document.createElement("button");
+        deleteButton.innerHTML = "<i class='fa fa-trash-o'></i>"; // You can use an actual icon here
+        deleteButton.classList.add("delete-button");
+
+        // Add event listener to delete button
+        deleteButton.addEventListener("click", () => {
+            deleteExpenseEntry(index);
+        });
+
+        listItem.appendChild(deleteButton);
+        expenseList.appendChild(listItem);
+    });
+}
+
+
+function deleteExpenseEntry(index) {
+    expenseData.splice(index, 1); // Remove the entry from the array
+    saveDataToLocalStorage();
+    updateUI();
 }
 
 // Update net balance display
